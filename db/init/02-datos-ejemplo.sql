@@ -1,4 +1,5 @@
 USE `gestion`;
+SET NAMES utf8mb4;
 
 -- ---------------------------------------------------------
 -- 1. TABLAS INDEPENDIENTES
