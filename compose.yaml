@@ -9,7 +9,7 @@ services:
     volumes:
       - datos:/var/lib/mysql
       - ./db/init:/docker-entrypoint-initdb.d:ro
-  
+
   api:
     build: .
     restart: unless-stopped
@@ -21,6 +21,12 @@ services:
       DB_PASSWORD: ${APP_DB_PASSWORD}
     ports:
       - "8080:8080"
- 
+
+  adminer:
+    image: adminer:6.2.0
+    ports:
+      - "8090:8080"
+    depends_on: [db]
+
 volumes:
   datos:
